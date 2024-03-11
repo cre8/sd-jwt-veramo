@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - name: Setup Git with GitHub Token
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
       - uses: pnpm/action-setup@v3
         with:
           version: 8
