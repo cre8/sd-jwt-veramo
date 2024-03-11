@@ -74,7 +74,7 @@ describe('Agent plugin', () => {
 
   let holder: string;
 
-  // Issuer Define the claims object with the user's information
+  // Issuer define the claims object with the user's information
   const claims = {
     sub: '',
     given_name: 'John',
