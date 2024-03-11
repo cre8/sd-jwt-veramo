@@ -1,5 +1,13 @@
 
 
+## 0.0.6 (2024-03-11)
+
+
+### Bug Fixes
+
+* add coverage token ([fc4910e](https://github.com/cre8/sd-jwt-veramo/commit/fc4910eb1e7f0c7496fa87c1888c61016babbf38))
+* init ([442d087](https://github.com/cre8/sd-jwt-veramo/commit/442d087a53c67cee20faea2ef712d4399eba543b))
+
 ## [0.0.5-0](https://github.com/cre8/sd-jwt-veramo/compare/v0.0.4...v0.0.5-0) (2024-03-04)
 
 
