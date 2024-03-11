@@ -26,7 +26,7 @@
     "coverage": "vitest run --coverage",
     "format": "pnpm dlx @biomejs/biome check --apply .",
     "clean": "rm -rf tmp && rm database.sqlite && rm -rf build && rm tsconfig.tsbuildinfo",
-    "release": "release-it"
+    "release": "dotenv release-it"
   },
   "license": "Apache-2.0",
   "dependencies": {
@@ -54,6 +54,7 @@
     "@vitest/coverage-v8": "^1.3.1",
     "cross-env": "^7.0.3",
     "did-resolver": "^4.1.0",
+    "dotenv-cli": "^7.4.1",
     "release-it": "^17.1.1",
     "typeorm": "^0.3.20",
     "typescript": "5.3.3",
