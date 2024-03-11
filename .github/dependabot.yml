@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"    
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Additional configuration for monorepos
+    allow:
+      # Allow updates to devDependencies, runtime dependencies, etc.
+      - dependency-type: "all"
