@@ -78,11 +78,11 @@ jobs:
           name: coverage-artifacts
           path: coverage
       - name: 'Upload coverage to Codecov'        
-        uses: codecov/codecov-action@v4-beta
+        uses: codecov/codecov-action@v4.0.1
         with:          
           fail_ci_if_error: true
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: cre8/sd-jwt-veramo        
 
   lint:
     needs: build
