@@ -34,14 +34,14 @@ import {
   Resolver,
   type VerificationMethod,
 } from 'did-resolver';
-import { createConnection } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { beforeAll, describe, expect, it } from 'vitest';
 import type { SdJwtVcPayload } from '@sd-jwt/sd-jwt-vc';
 import { decodeSdJwt } from '@sd-jwt/decode';
 import type { KBJwt } from '@sd-jwt/core';
 import { type ISDJwtPlugin, SDJwtPlugin } from '../index';
 
-async function verifySignature<T>(
+async function verifySignature(
   data: string,
   signature: string,
   key: JsonWebKey,
@@ -76,7 +76,6 @@ describe('Agent plugin', () => {
 
   // Issuer define the claims object with the user's information
   const claims = {
-    sub: '',
     given_name: 'John',
     family_name: 'Deo',
     email: 'johndeo@example.com',
@@ -104,14 +103,14 @@ describe('Agent plugin', () => {
 
   beforeAll(async () => {
     const KMS_SECRET_KEY = '000102030405060708090a0b0c0d0e0f';
-    const dbConnection = await createConnection({
+    const dbConnection = await new DataSource({
       type: 'sqlite',
       database: ':memory:',
       entities: Entities,
       migrations,
       synchronize: true,
       logging: false,
-    });
+    }).initialize();
     agent = createAgent<AgentType>({
       plugins: [
         new SDJwtPlugin({
@@ -164,7 +163,7 @@ describe('Agent plugin', () => {
         options: { keyType: 'Secp256r1' } as JwkCreateIdentifierOptions,
       })
       .then((did) => `${did.did}#0`);
-    claims.sub = holder;
+    // claims.sub = holder;
   });
 
   it('create a sd-jwt', async () => {
@@ -229,6 +228,7 @@ describe('Agent plugin', () => {
   it('create a presentation', async () => {
     const credentialPayload: SdJwtVcPayload = {
       ...claims,
+      sub: holder,
       iss: issuer,
       iat: new Date().getTime() / 1000,
       vct: '',
@@ -385,6 +385,7 @@ describe('Agent plugin', () => {
     const credentialPayload: SdJwtVcPayload = {
       ...claims,
       iss: issuer,
+      sub: holder,
       iat: new Date().getTime() / 1000,
       vct: '',
     };
