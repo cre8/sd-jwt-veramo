@@ -1,9 +1,7 @@
 # SD-JWT-VC plugin for Veramo
 
 [![CI](https://github.com/cre8/sd-jwt-veramo/actions/workflows/cicd.yml/badge.svg)](https://github.com/cre8/sd-jwt-veramo/actions/workflows/cicd.yml)
-
 [![codecov](https://codecov.io/gh/cre8/sd-jwt-veramo/graph/badge.svg?token=qLMSDFL0gV)](https://codecov.io/gh/cre8/sd-jwt-veramo)
-
 [![npm version](https://badge.fury.io/js/@bcrl%2Fveramo-sd-jwt.svg)](https://badge.fury.io/js/@bcrl%2Fveramo-sd-jwt)
 
 A Veramo plugin to issue, present and verify [SD-JWT-VCs](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/) and is using [SD-JWT-JS](https://github.com/openwallet-foundation-labs/sd-jwt-js) library.
