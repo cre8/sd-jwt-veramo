@@ -30,7 +30,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sd-jwt/core": "^0.4.0",
+    "@sd-jwt/core": "^0.6.0",
     "@sd-jwt/decode": "^0.4.0",
     "@sd-jwt/sd-jwt-vc": "^0.4.0",
     "@sd-jwt/types": "^0.6.0",
