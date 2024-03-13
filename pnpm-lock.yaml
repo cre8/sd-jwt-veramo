@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@sd-jwt/core':
-    specifier: ^0.4.0
-    version: 0.4.0
+    specifier: ^0.6.0
+    version: 0.6.0
   '@sd-jwt/decode':
     specifier: ^0.4.0
     version: 0.4.0
@@ -3672,6 +3672,16 @@ packages:
       '@sd-jwt/utils': 0.4.0
     dev: false
 
+  /@sd-jwt/core@0.6.0:
+    resolution: {integrity: sha512-fEu2n5w8cnbFH/P2FHHm6NwlNtl6KaMwIY/I11oXNwgiqash7LKI+L8tNUXEmW02gXQ9799POQJIyFQX5lyDAA==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@sd-jwt/decode': 0.6.0
+      '@sd-jwt/present': 0.6.0
+      '@sd-jwt/types': 0.6.0
+      '@sd-jwt/utils': 0.6.0
+    dev: false
+
   /@sd-jwt/crypto-nodejs@0.4.1-next.12:
     resolution: {integrity: sha512-Jau8t24Vi/oNofeS1XKJq4beYhrH8rtW0Y5PgxzDUDb1gWcAdDIm12kmVQTs82sxl4qqFjutuCj0zRrUKuDOMQ==}
     engines: {node: '>=16'}
@@ -3685,6 +3695,14 @@ packages:
       '@sd-jwt/utils': 0.4.0
     dev: false
 
+  /@sd-jwt/decode@0.6.0:
+    resolution: {integrity: sha512-zdNxEBMUjXd+myOj22+qSidLmcKVajKm8ALaPdcvfRu52gVAvohfA1PyefmczYlc0WHHC+Xne9z/eVn97YtUZQ==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@sd-jwt/types': 0.6.0
+      '@sd-jwt/utils': 0.6.0
+    dev: false
+
   /@sd-jwt/present@0.4.0:
     resolution: {integrity: sha512-fE1orZwS8cl9A/A1uNsxYOEscyTv5PYJqcmsvVPr6mQEyhIlcJHWTrCGNPGi1HgmpqHz9oOVhntBYCrMzOfTew==}
     engines: {node: '>=16'}
@@ -3692,6 +3710,15 @@ packages:
       '@sd-jwt/decode': 0.4.0
       '@sd-jwt/types': 0.4.0
       '@sd-jwt/utils': 0.4.0
+    dev: false
+
+  /@sd-jwt/present@0.6.0:
+    resolution: {integrity: sha512-ASbneF/mfNre1HP/h74DKu+jaDJ95dOwvXjcIbs2Quk/OFlV7ABqmUWY6/Z04mnBNkU2piQOGaluyW0pMTA/ug==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@sd-jwt/decode': 0.6.0
+      '@sd-jwt/types': 0.6.0
+      '@sd-jwt/utils': 0.6.0
     dev: false
 
   /@sd-jwt/sd-jwt-vc@0.4.0:
@@ -3716,6 +3743,14 @@ packages:
     engines: {node: '>=16'}
     dependencies:
       '@sd-jwt/types': 0.4.0
+      js-base64: 3.7.7
+    dev: false
+
+  /@sd-jwt/utils@0.6.0:
+    resolution: {integrity: sha512-1uu9MNPsnEFUbGEQYk5GNYt+IQAPc9wKz1u8Cgm7wj5hRwiyiR8iBB9xdAXFPXj6A3uz7buXKcgoS9nNT3uccA==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@sd-jwt/types': 0.6.0
       js-base64: 3.7.7
     dev: false
 
