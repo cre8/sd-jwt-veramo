@@ -57,8 +57,8 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    * @param args - Arguments necessary for the creation of a SD-JWT presentation.
    * @param context - This reserved param is automatically added and handled by the framework, *do not override*
    */
-  createSdJwtVcPresentation<T extends object>(
-    args: ICreateSdJwtVcPresentationArgs<T>,
+  createSdJwtVcPresentation(
+    args: ICreateSdJwtVcPresentationArgs,
     context: IRequiredContext,
   ): Promise<ICreateSdJwtVcPresentationResult>;
 
@@ -111,7 +111,7 @@ export interface ICreateSdJwtVcResult {
  *
  * @beta
  */
-export interface ICreateSdJwtVcPresentationArgs<T extends object> {
+export interface ICreateSdJwtVcPresentationArgs {
   /**
    * Encoded SD-JWT credential
    */
@@ -122,7 +122,7 @@ export interface ICreateSdJwtVcPresentationArgs<T extends object> {
    * if not provided, all keys will be disclosed
    * if empty array, no keys will be disclosed
    */
-  presentationKeys?: PresentationFrame<T>;
+  presentationKeys?: PresentationFrame<object>;
 
   /**
    * Information to include to add key binding.
