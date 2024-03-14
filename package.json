@@ -40,7 +40,7 @@
     "@veramo/utils": "5.6.1-next.57"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "1.6.1",
     "@release-it/conventional-changelog": "^8.0.1",
     "@sd-jwt/crypto-nodejs": "next",
     "@types/node": "^20.11.27",
