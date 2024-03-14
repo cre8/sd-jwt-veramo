@@ -39,7 +39,7 @@ devDependencies:
     version: 8.0.1(release-it@17.1.1)
   '@sd-jwt/crypto-nodejs':
     specifier: next
-    version: 0.4.1-next.12
+    version: 0.6.1-next.5
   '@types/node':
     specifier: ^20.11.25
     version: 20.11.25
@@ -3682,8 +3682,8 @@ packages:
       '@sd-jwt/utils': 0.6.0
     dev: false
 
-  /@sd-jwt/crypto-nodejs@0.4.1-next.12:
-    resolution: {integrity: sha512-Jau8t24Vi/oNofeS1XKJq4beYhrH8rtW0Y5PgxzDUDb1gWcAdDIm12kmVQTs82sxl4qqFjutuCj0zRrUKuDOMQ==}
+  /@sd-jwt/crypto-nodejs@0.6.1-next.5:
+    resolution: {integrity: sha512-/b+ia9n9gvJWJ0EhNN5hZhuEkAMgUVaxIV1aRPZQMJfaH9np0OY09hvXvi9a0rRSyCZK72Qb0tltimMpKl/f0g==}
     engines: {node: '>=16'}
     dev: true
 
