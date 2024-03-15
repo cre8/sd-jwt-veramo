@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+      - name: 'Generate plugin schema'
+        run: pnpm run generate-plugin-schema
       - name: 'Install dependencies'
         run: pnpm install
       - name: 'Build'
