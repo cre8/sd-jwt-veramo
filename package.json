@@ -11,7 +11,7 @@
   ],
   "veramo": {
     "pluginInterfaces": {
-      "ISDJwtPlugin": "./src/types/i-sd-jwt-plugin.ts"
+      "ISDJwtPlugin": "./src/types/ISDJwtPlugin.ts"
     }
   },
   "publishConfig": {

@@ -1,9 +1,4 @@
-import type {
-  Hasher,
-  KBOptions,
-  PresentationFrame,
-  SaltGenerator,
-} from '@sd-jwt/types';
+import type { KBOptions, PresentationFrame } from '@sd-jwt/types';
 import type { SdJwtVcPayload } from '@sd-jwt/sd-jwt-vc';
 import type {
   IAgentContext,
@@ -49,7 +44,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   createSdJwtVc(
     args: ICreateSdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcResult>;
 
   /**
@@ -59,7 +54,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   createSdJwtVcPresentation(
     args: ICreateSdJwtVcPresentationArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcPresentationResult>;
 
   /**
@@ -69,7 +64,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVc(
     args: IVerifySdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcResult>;
 
   /**
@@ -79,7 +74,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVcPresentation(
     args: IVerifySdJwtVcPresentationArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcPresentationResult>;
 }
 
@@ -184,23 +179,3 @@ export type IVerifySdJwtVcPresentationResult = {
 export type IRequiredContext = IAgentContext<
   IDIDManager & IResolver & IKeyManager
 >;
-export interface SdJWTImplementation {
-  saltGenerator: SaltGenerator;
-  hasher: Hasher;
-  verifySignature: (
-    data: string,
-    signature: string,
-    publicKey: JsonWebKey,
-  ) => Promise<boolean>;
-}
-
-export interface Claims {
-  /**
-   * Subject of the SD-JWT
-   */
-  sub?: string;
-  cnf?: {
-    jwk: JsonWebKey;
-  };
-  [key: string]: unknown;
-}
