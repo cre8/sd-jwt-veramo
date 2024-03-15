@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.4.0
     version: 0.4.0
   '@sd-jwt/sd-jwt-vc':
-    specifier: ^0.4.0
-    version: 0.4.0
+    specifier: ^0.6.0
+    version: 0.6.0
   '@sd-jwt/types':
     specifier: ^0.6.0
     version: 0.6.0
@@ -3662,16 +3662,6 @@ packages:
       '@scure/base': 1.1.5
     dev: false
 
-  /@sd-jwt/core@0.4.0:
-    resolution: {integrity: sha512-amGmTQubEErrKbaSYWOCKPIOePOLHp7o+owms71M25+vBqfD939bn/5O501vEc8UlbL3FkY4Jjyhh8JPud+fIA==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@sd-jwt/decode': 0.4.0
-      '@sd-jwt/present': 0.4.0
-      '@sd-jwt/types': 0.4.0
-      '@sd-jwt/utils': 0.4.0
-    dev: false
-
   /@sd-jwt/core@0.6.0:
     resolution: {integrity: sha512-fEu2n5w8cnbFH/P2FHHm6NwlNtl6KaMwIY/I11oXNwgiqash7LKI+L8tNUXEmW02gXQ9799POQJIyFQX5lyDAA==}
     engines: {node: '>=16'}
@@ -3703,15 +3693,6 @@ packages:
       '@sd-jwt/utils': 0.6.0
     dev: false
 
-  /@sd-jwt/present@0.4.0:
-    resolution: {integrity: sha512-fE1orZwS8cl9A/A1uNsxYOEscyTv5PYJqcmsvVPr6mQEyhIlcJHWTrCGNPGi1HgmpqHz9oOVhntBYCrMzOfTew==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@sd-jwt/decode': 0.4.0
-      '@sd-jwt/types': 0.4.0
-      '@sd-jwt/utils': 0.4.0
-    dev: false
-
   /@sd-jwt/present@0.6.0:
     resolution: {integrity: sha512-ASbneF/mfNre1HP/h74DKu+jaDJ95dOwvXjcIbs2Quk/OFlV7ABqmUWY6/Z04mnBNkU2piQOGaluyW0pMTA/ug==}
     engines: {node: '>=16'}
@@ -3721,11 +3702,11 @@ packages:
       '@sd-jwt/utils': 0.6.0
     dev: false
 
-  /@sd-jwt/sd-jwt-vc@0.4.0:
-    resolution: {integrity: sha512-XnmZzyKqMoyfDwtCoSmImn5+6HlGI0L7KcEcCtXThjf78PDPE+F1/ZMJFDNPJBTFoit3pdfaYRiRtBaJSUb22g==}
+  /@sd-jwt/sd-jwt-vc@0.6.0:
+    resolution: {integrity: sha512-vc3BC0rUicxrPjsCyyGb3pfJA3D/Fd00cGWJi85SUEb+Is8vQVOUdCxVi3soKzH0tAvGL0RqCG9YLH85xBZ5Ow==}
     engines: {node: '>=16'}
     dependencies:
-      '@sd-jwt/core': 0.4.0
+      '@sd-jwt/core': 0.6.0
     dev: false
 
   /@sd-jwt/types@0.4.0:
