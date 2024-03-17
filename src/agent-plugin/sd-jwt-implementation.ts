@@ -10,6 +10,6 @@ export interface SdJWTImplementation {
   verifySignature: (
     data: string,
     signature: string,
-    publicKey: JsonWebKey
+    publicKey: JsonWebKey,
   ) => Promise<boolean>;
 }

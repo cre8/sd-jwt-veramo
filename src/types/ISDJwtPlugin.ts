@@ -44,7 +44,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   createSdJwtVc(
     args: ICreateSdJwtVcArgs,
-    context: IRequiredContext
+    context: IRequiredContext,
   ): Promise<ICreateSdJwtVcResult>;
 
   /**
@@ -54,7 +54,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   createSdJwtVcPresentation(
     args: ICreateSdJwtVcPresentationArgs,
-    context: IRequiredContext
+    context: IRequiredContext,
   ): Promise<ICreateSdJwtVcPresentationResult>;
 
   /**
@@ -64,7 +64,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVc(
     args: IVerifySdJwtVcArgs,
-    context: IRequiredContext
+    context: IRequiredContext,
   ): Promise<IVerifySdJwtVcResult>;
 
   /**
@@ -74,7 +74,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVcPresentation(
     args: IVerifySdJwtVcPresentationArgs,
-    context: IRequiredContext
+    context: IRequiredContext,
   ): Promise<IVerifySdJwtVcPresentationResult>;
 }
 

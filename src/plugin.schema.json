@@ -29,17 +29,11 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "iss",
-                "iat",
-                "vct"
-              ]
+              "required": ["iss", "iat", "vct"]
             },
             "disclosureFrame": {}
           },
-          "required": [
-            "credentialPayload"
-          ],
+          "required": ["credentialPayload"],
           "description": "ICreateSdJwtVcArgs"
         },
         "ICreateSdJwtVcResult": {
@@ -50,9 +44,7 @@
               "description": "the encoded sd-jwt credential"
             }
           },
-          "required": [
-            "credential"
-          ],
+          "required": ["credential"],
           "description": "ICreateSdJwtVcResult"
         },
         "ICreateSdJwtVcPresentationArgs": {
@@ -78,22 +70,14 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "iat",
-                    "aud",
-                    "nonce"
-                  ]
+                  "required": ["iat", "aud", "nonce"]
                 }
               },
-              "required": [
-                "payload"
-              ],
+              "required": ["payload"],
               "description": "Information to include to add key binding."
             }
           },
-          "required": [
-            "presentation"
-          ]
+          "required": ["presentation"]
         },
         "ICreateSdJwtVcPresentationResult": {
           "type": "object",
@@ -103,9 +87,7 @@
               "description": "Encoded presentation."
             }
           },
-          "required": [
-            "presentation"
-          ],
+          "required": ["presentation"],
           "description": "Created presentation"
         },
         "IVerifySdJwtVcArgs": {
@@ -115,18 +97,14 @@
               "type": "string"
             }
           },
-          "required": [
-            "credential"
-          ]
+          "required": ["credential"]
         },
         "IVerifySdJwtVcResult": {
           "type": "object",
           "properties": {
             "verifiedPayloads": {}
           },
-          "required": [
-            "verifiedPayloads"
-          ]
+          "required": ["verifiedPayloads"]
         },
         "IVerifySdJwtVcPresentationArgs": {
           "type": "object",
@@ -144,9 +122,7 @@
               "type": "boolean"
             }
           },
-          "required": [
-            "presentation"
-          ]
+          "required": ["presentation"]
         },
         "IVerifySdJwtVcPresentationResult": {
           "type": "object",
@@ -156,9 +132,7 @@
               "additionalProperties": {}
             }
           },
-          "required": [
-            "verifiedPayloads"
-          ]
+          "required": ["verifiedPayloads"]
         }
       },
       "methods": {
