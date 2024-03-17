@@ -112,7 +112,8 @@ export interface ICreateSdJwtVcPresentationArgs {
    */
   presentation: string;
 
-  /*
+  /**
+   * @hidden
    * The keys to use for selective disclosure for presentation
    * if not provided, all keys will be disclosed
    * if empty array, no keys will be disclosed
