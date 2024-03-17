@@ -29,11 +29,13 @@ jobs:
           node-version: 20
           cache: 'pnpm'      
       - name: 'Install dependencies'
-        run: pnpm install
-      - name: 'Generate plugin schema'
-        run: pnpm run generate-plugin-schema
+        run: pnpm install      
       - name: 'Build'
         run: pnpm build
+      - name: 'Generate plugin schema'
+        run: pnpm run generate-plugin-schema
+      - name: 'Copy schema'
+        run: cp -r ./src/schema ./dist/schema
       - name: 'Save build output'
         uses: actions/cache/save@v4
         with:
