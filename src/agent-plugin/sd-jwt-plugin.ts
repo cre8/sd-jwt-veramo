@@ -19,7 +19,6 @@ import type {
 import { mapIdentifierKeysToDocWithJwkSupport } from '@sphereon/ssi-sdk-ext.did-utils';
 import { encodeJoseBlob } from '@veramo/utils';
 import type { VerificationMethod } from 'did-resolver';
-import type { Claims } from './claims';
 
 /**
  * SD-JWT plugin for Veramo
@@ -46,7 +45,7 @@ export class SDJwtPlugin implements IAgentPlugin {
    */
   async createSdJwtVc(
     args: ICreateSdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcResult> {
     const issuer = args.credentialPayload.iss;
     if (!issuer) {
@@ -71,7 +70,7 @@ export class SDJwtPlugin implements IAgentPlugin {
 
     const credential = await sdjwt.issue(
       args.credentialPayload,
-      args.disclosureFrame,
+      args.disclosureFrame
     );
     return { credential };
   }
@@ -89,7 +88,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     const doc = await mapIdentifierKeysToDocWithJwkSupport(
       identifier,
       'assertionMethod',
-      context,
+      context
     );
     if (!doc || doc.length === 0) throw new Error('No key found for signing');
     const key = doc.find((key) => key.meta.verificationMethod.id === issuer);
@@ -120,13 +119,13 @@ export class SDJwtPlugin implements IAgentPlugin {
    */
   async createSdJwtVcPresentation(
     args: ICreateSdJwtVcPresentationArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcPresentationResult> {
     const cred = await SDJwt.fromEncode(
       args.presentation,
-      this.algorithms.hasher,
+      this.algorithms.hasher
     );
-    const claims = await cred.getClaims<Claims>(this.algorithms.hasher);
+    const claims = await cred.getClaims<JwtPayload>(this.algorithms.hasher);
     let holderDID: string;
     // we primarly look for a cnf field, if it's not there we look for a sub field. If this is also not given, we throw an error since we can not sign it.
     if (claims.cnf?.jwk) {
@@ -152,7 +151,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     const credential = await sdjwt.present(
       args.presentation,
       args.presentationKeys,
-      { kb: args.kb },
+      { kb: args.kb }
     );
     return { presentation: credential };
   }
@@ -165,7 +164,7 @@ export class SDJwtPlugin implements IAgentPlugin {
    */
   async verifySdJwtVc(
     args: IVerifySdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcResult> {
     // biome-ignore lint/style/useConst: <explanation>
     let sdjwt: SDJwtVcInstance;
@@ -192,7 +191,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     context: IRequiredContext,
     data: string,
     signature: string,
-    payload: JwtPayload,
+    payload: JwtPayload
   ): Promise<boolean> {
     let key: JsonWebKey;
     if (payload.cnf) {
@@ -226,7 +225,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     sdjwt: SDJwtVcInstance,
     context: IRequiredContext,
     data: string,
-    signature: string,
+    signature: string
   ) {
     const decodedVC = await sdjwt.decode(`${data}.${signature}`);
     const issuer: string = (
@@ -240,7 +239,7 @@ export class SDJwtPlugin implements IAgentPlugin {
       throw new Error('issuer did not resolve to a did document');
     }
     const didDocumentKey = didDoc.didDocument?.verificationMethod?.find(
-      (key) => key.id,
+      (key) => key.id
     );
     if (!didDocumentKey) {
       throw new Error('issuer did document does not include referenced key');
@@ -258,7 +257,7 @@ export class SDJwtPlugin implements IAgentPlugin {
    */
   async verifySdJwtVcPresentation(
     args: IVerifySdJwtVcPresentationArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcPresentationResult> {
     // biome-ignore lint/style/useConst: <explanation>
     let sdjwt: SDJwtVcInstance;
@@ -267,7 +266,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     const verifierKb: KbVerifier = async (
       data: string,
       signature: string,
-      payload: JwtPayload,
+      payload: JwtPayload
     ) => this.verifyKb(sdjwt, context, data, signature, payload);
     sdjwt = new SDJwtVcInstance({
       verifier,
@@ -277,7 +276,7 @@ export class SDJwtPlugin implements IAgentPlugin {
     const verifiedPayloads = await sdjwt.verify(
       args.presentation,
       args.requiredClaimKeys,
-      args.kb,
+      args.kb
     );
 
     return { verifiedPayloads };
