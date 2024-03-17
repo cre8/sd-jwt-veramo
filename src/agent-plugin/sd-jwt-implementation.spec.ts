@@ -1,8 +1,6 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import type { SdJWTImplementation } from './sd-jwt-implementation';
 import { digest, generateSalt } from '@sd-jwt/crypto-nodejs';
-import { beforeEach } from 'node:test';
-import { i } from 'vitest/dist/reporters-MmQN-57K';
 
 describe('sd-jwt-implementation', () => {
   let implementation: SdJWTImplementation;
@@ -29,7 +27,7 @@ describe('sd-jwt-implementation', () => {
     const result = await implementation.verifySignature(
       'test',
       'signature',
-      {}
+      {},
     );
     expect(result).toBeTruthy();
   });
