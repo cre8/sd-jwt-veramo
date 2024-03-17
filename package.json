@@ -1,6 +1,6 @@
 {
   "name": "@bcrl/veramo-sd-jwt",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "source": "src/index.ts",
   "main": "build/index.js",
   "types": "build/index.d.ts",
