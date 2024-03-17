@@ -27,11 +27,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - name: 'Generate plugin schema'
-        run: pnpm run generate-plugin-schema
+          cache: 'pnpm'      
       - name: 'Install dependencies'
         run: pnpm install
+      - name: 'Generate plugin schema'
+        run: pnpm run generate-plugin-schema
       - name: 'Build'
         run: pnpm build
       - name: 'Save build output'
