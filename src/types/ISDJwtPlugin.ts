@@ -1,9 +1,4 @@
-import type {
-  Hasher,
-  KBOptions,
-  PresentationFrame,
-  SaltGenerator,
-} from '@sd-jwt/types';
+import type { KBOptions, PresentationFrame } from '@sd-jwt/types';
 import type { SdJwtVcPayload } from '@sd-jwt/sd-jwt-vc';
 import type {
   IAgentContext,
@@ -57,8 +52,8 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    * @param args - Arguments necessary for the creation of a SD-JWT presentation.
    * @param context - This reserved param is automatically added and handled by the framework, *do not override*
    */
-  createSdJwtVcPresentation<T extends object>(
-    args: ICreateSdJwtVcPresentationArgs<T>,
+  createSdJwtVcPresentation(
+    args: ICreateSdJwtVcPresentationArgs,
     context: IRequiredContext,
   ): Promise<ICreateSdJwtVcPresentationResult>;
 
@@ -111,18 +106,19 @@ export interface ICreateSdJwtVcResult {
  *
  * @beta
  */
-export interface ICreateSdJwtVcPresentationArgs<T extends object> {
+export interface ICreateSdJwtVcPresentationArgs {
   /**
    * Encoded SD-JWT credential
    */
   presentation: string;
 
-  /*
+  /**
+   * @hidden
    * The keys to use for selective disclosure for presentation
    * if not provided, all keys will be disclosed
    * if empty array, no keys will be disclosed
    */
-  presentationKeys?: PresentationFrame<T>;
+  presentationKeys?: PresentationFrame<object>;
 
   /**
    * Information to include to add key binding.
@@ -184,23 +180,3 @@ export type IVerifySdJwtVcPresentationResult = {
 export type IRequiredContext = IAgentContext<
   IDIDManager & IResolver & IKeyManager
 >;
-export interface SdJWTImplementation {
-  saltGenerator: SaltGenerator;
-  hasher: Hasher;
-  verifySignature: (
-    data: string,
-    signature: string,
-    publicKey: JsonWebKey,
-  ) => Promise<boolean>;
-}
-
-export interface Claims {
-  /**
-   * Subject of the SD-JWT
-   */
-  sub?: string;
-  cnf?: {
-    jwk: JsonWebKey;
-  };
-  [key: string]: unknown;
-}
