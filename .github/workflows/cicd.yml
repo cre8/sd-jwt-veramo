@@ -35,7 +35,7 @@ jobs:
       - name: 'Generate plugin schema'
         run: pnpm run generate-plugin-schema
       - name: 'Copy schema'
-        run: cp -r ./src/schema ./dist/schema
+        run: cp ./src/plugin.schema.json ./dist/plugin.schema.json
       - name: 'Save build output'
         uses: actions/cache/save@v4
         with:
