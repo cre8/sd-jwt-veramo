@@ -44,7 +44,7 @@ import { type ISDJwtPlugin, SDJwtPlugin } from '../index';
 async function verifySignature(
   data: string,
   signature: string,
-  key: JsonWebKey,
+  key: JsonWebKey
 ) {
   let { alg, crv } = key;
   if (alg === 'ES256') alg = 'ECDSA';
@@ -53,15 +53,15 @@ async function verifySignature(
     key,
     { name: alg, namedCurve: crv } as EcKeyImportParams,
     true,
-    ['verify'],
+    ['verify']
   );
   return Promise.resolve(
     subtle.verify(
       { name: alg as string, hash: 'SHA-256' },
       publicKey,
       Buffer.from(signature, 'base64'),
-      Buffer.from(data),
-    ),
+      Buffer.from(data)
+    )
   );
 }
 
@@ -122,7 +122,7 @@ describe('Agent plugin', () => {
           store: new KeyStore(dbConnection),
           kms: {
             local: new KeyManagementSystem(
-              new PrivateKeyStore(dbConnection, new SecretBox(KMS_SECRET_KEY)),
+              new PrivateKeyStore(dbConnection, new SecretBox(KMS_SECRET_KEY))
             ),
           },
         }),
@@ -190,7 +190,7 @@ describe('Agent plugin', () => {
       agent.createSdJwtVc({
         credentialPayload: credentialPayload as unknown as SdJwtVcPayload,
         disclosureFrame,
-      }),
+      })
     ).rejects.toThrow('credential.issuer must not be empty');
   });
 
@@ -205,7 +205,7 @@ describe('Agent plugin', () => {
       agent.createSdJwtVc({
         credentialPayload,
         disclosureFrame,
-      }),
+      })
     ).rejects.toThrow('credential.issuer must reference a key');
   });
 
@@ -238,13 +238,13 @@ describe('Agent plugin', () => {
       disclosureFrame,
     });
 
-    const presentationKeys: PresentationFrame<typeof claims> = {
+    const presentationFrame: PresentationFrame<typeof claims> = {
       given_name: true,
     };
 
-    const presentation = await agent.createSdJwtVcPresentation({
+    const presentation = await agent.createSdJwtVcPresentation<typeof claims>({
       presentation: credential.credential,
-      presentationKeys,
+      presentationFrame,
       kb: {
         payload: {
           aud: '1',
@@ -265,7 +265,7 @@ describe('Agent plugin', () => {
       .then((dids) => dids[0]);
     const jwk = createJWK(
       did.keys[0].type as JwkDidSupportedKeyTypes,
-      did.keys[0].publicKeyHex,
+      did.keys[0].publicKeyHex
     ) as JsonWebKey;
     const credentialPayload: SdJwtVcPayload = {
       ...claims,
@@ -281,16 +281,16 @@ describe('Agent plugin', () => {
       disclosureFrame,
     });
 
-    const presentationKeys: PresentationFrame<typeof claims> = {
+    const presentationFrame: PresentationFrame<typeof claims> = {
       given_name: true,
       address: {
         country: true,
       },
     };
 
-    const presentation = await agent.createSdJwtVcPresentation({
+    const presentation = await agent.createSdJwtVcPresentation<typeof claims>({
       presentation: credential.credential,
-      presentationKeys,
+      presentationFrame,
       kb: {
         payload: {
           aud: '1',
@@ -318,9 +318,14 @@ describe('Agent plugin', () => {
       credentialPayload,
       disclosureFrame,
     });
-    const presentation = agent.createSdJwtVcPresentation({
+    const presentationFrame: PresentationFrame<typeof claims> = {
+      given_name: true,
+    };
+    const presentation = agent.createSdJwtVcPresentation<
+      PresentationFrame<typeof claims>
+    >({
       presentation: credential.credential,
-      presentationKeys: ['given_name'],
+      presentationFrame,
       kb: {
         payload: {
           aud: '1',
@@ -330,7 +335,7 @@ describe('Agent plugin', () => {
       },
     });
     expect(presentation).rejects.toThrow(
-      'credential does not include a holder reference',
+      'credential does not include a holder reference'
     );
   });
 
@@ -354,13 +359,13 @@ describe('Agent plugin', () => {
       disclosureFrame,
     });
 
-    const presentationKeys: PresentationFrame<typeof claims> = {
+    const presentationFrame: PresentationFrame<typeof claims> = {
       given_name: true,
     };
 
-    const presentation = await agent.createSdJwtVcPresentation({
+    const presentation = await agent.createSdJwtVcPresentation<typeof claims>({
       presentation: credential.credential,
-      presentationKeys,
+      presentationFrame,
       kb: {
         payload: {
           aud: '1',
@@ -377,7 +382,7 @@ describe('Agent plugin', () => {
     });
     expect(result).toBeDefined();
     expect((result.verifiedPayloads.payload as typeof claims).given_name).toBe(
-      'John',
+      'John'
     );
   });
 
@@ -394,13 +399,13 @@ describe('Agent plugin', () => {
       disclosureFrame,
     });
 
-    const presentationKeys: PresentationFrame<typeof claims> = {
+    const presentationFrame: PresentationFrame<typeof claims> = {
       given_name: true,
     };
 
-    const presentation = await agent.createSdJwtVcPresentation({
+    const presentation = await agent.createSdJwtVcPresentation<typeof claims>({
       presentation: credential.credential,
-      presentationKeys,
+      presentationFrame,
       kb: {
         payload: {
           aud: '1',
@@ -418,7 +423,7 @@ describe('Agent plugin', () => {
     });
     expect(result).toBeDefined();
     expect((result.verifiedPayloads.payload as typeof claims).given_name).toBe(
-      'John',
+      'John'
     );
   });
 });

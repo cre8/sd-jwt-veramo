@@ -1,5 +1,7 @@
 
 
+## [0.0.7](https://github.com/cre8/sd-jwt-veramo/compare/0.0.6...0.0.7) (2024-03-17)
+
 ## 0.0.6 (2024-03-11)
 
 
