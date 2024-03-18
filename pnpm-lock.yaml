@@ -2826,7 +2826,7 @@ packages:
     resolution: {integrity: sha512-B/A1dY/w4F/t6cDHUscklO6ovb/ztFsrsTXFd8QlqSByk/vyy+QbPE3VVpmmyI/7RX+PA1AJcvBdzCIz+r9dVQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@metamask/utils': 8.3.0
+      '@metamask/utils': 8.4.0
       superstruct: 1.0.4
     transitivePeerDependencies:
       - supports-color
@@ -2838,7 +2838,7 @@ packages:
     dependencies:
       '@ethereumjs/util': 8.1.0
       '@metamask/abi-utils': 2.0.2
-      '@metamask/utils': 8.3.0
+      '@metamask/utils': 8.4.0
       ethereum-cryptography: 2.1.3
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
@@ -2846,8 +2846,8 @@ packages:
       - supports-color
     dev: false
 
-  /@metamask/utils@8.3.0:
-    resolution: {integrity: sha512-WFVcMPEkKKRCJ8DDkZUTVbLlpwgRn98F4VM/WzN89HM8PmHMnCyk/oG0AmK/seOxtik7uC7Bbi2YBC5Z5XB2zw==}
+  /@metamask/utils@8.4.0:
+    resolution: {integrity: sha512-dbIc3C7alOe0agCuBHM1h71UaEaEqOk2W8rAtEn8QGz4haH2Qq7MoK6i7v2guzvkJVVh79c+QCzIqphC3KvrJg==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@ethereumjs/tx': 4.2.0
@@ -2858,6 +2858,7 @@ packages:
       pony-cause: 2.1.10
       semver: 7.6.0
       superstruct: 1.0.4
+      uuid: 9.0.1
     transitivePeerDependencies:
       - supports-color
     dev: false
