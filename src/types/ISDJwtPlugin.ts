@@ -44,7 +44,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   createSdJwtVc(
     args: ICreateSdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcResult>;
 
   /**
@@ -52,9 +52,9 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    * @param args - Arguments necessary for the creation of a SD-JWT presentation.
    * @param context - This reserved param is automatically added and handled by the framework, *do not override*
    */
-  createSdJwtVcPresentation(
-    args: ICreateSdJwtVcPresentationArgs,
-    context: IRequiredContext,
+  createSdJwtVcPresentation<T extends Extensible = Extensible>(
+    args: ICreateSdJwtVcPresentationArgs<T>,
+    context: IRequiredContext
   ): Promise<ICreateSdJwtVcPresentationResult>;
 
   /**
@@ -64,7 +64,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVc(
     args: IVerifySdJwtVcArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcResult>;
 
   /**
@@ -74,7 +74,7 @@ export interface ISDJwtPlugin extends IPluginMethodMap {
    */
   verifySdJwtVcPresentation(
     args: IVerifySdJwtVcPresentationArgs,
-    context: IRequiredContext,
+    context: IRequiredContext
   ): Promise<IVerifySdJwtVcPresentationResult>;
 }
 
@@ -102,11 +102,15 @@ export interface ICreateSdJwtVcResult {
   credential: string;
 }
 
+interface Extensible {
+  [x: string]: boolean | undefined;
+}
+
 /**
  *
  * @beta
  */
-export interface ICreateSdJwtVcPresentationArgs {
+export interface ICreateSdJwtVcPresentationArgs<T extends Extensible> {
   /**
    * Encoded SD-JWT credential
    */
@@ -118,7 +122,7 @@ export interface ICreateSdJwtVcPresentationArgs {
    * if not provided, all keys will be disclosed
    * if empty array, no keys will be disclosed
    */
-  presentationKeys?: PresentationFrame<object>;
+  presentationFrame?: PresentationFrame<T>;
 
   /**
    * Information to include to add key binding.
