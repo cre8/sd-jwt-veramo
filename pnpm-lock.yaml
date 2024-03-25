@@ -39,7 +39,7 @@ devDependencies:
     version: 8.0.1(release-it@17.1.1)
   '@sd-jwt/crypto-nodejs':
     specifier: next
-    version: 0.6.2-next.2
+    version: 0.6.2-next.3
   '@types/node':
     specifier: ^20.11.30
     version: 20.11.30
@@ -2739,7 +2739,7 @@ packages:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       jest-mock: 29.7.0
     dev: false
 
@@ -2749,7 +2749,7 @@ packages:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -2767,7 +2767,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       '@types/yargs': 15.0.19
       chalk: 4.1.2
     dev: false
@@ -2779,7 +2779,7 @@ packages:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       '@types/yargs': 17.0.32
       chalk: 4.1.2
     dev: false
@@ -3673,8 +3673,8 @@ packages:
       '@sd-jwt/utils': 0.6.0
     dev: false
 
-  /@sd-jwt/crypto-nodejs@0.6.2-next.2:
-    resolution: {integrity: sha512-sMWV89HAeZ1c++g+H9uLTjFV73G5bQVKtPXWmZbJ/XybaJIINnuRybrQP/tivXcanbYCEtoDHifNTuKebeve4A==}
+  /@sd-jwt/crypto-nodejs@0.6.2-next.3:
+    resolution: {integrity: sha512-pIl4ZA4PwAaEmlwpJzAx3CECsGZAPIPTOGTNWqZeBXIU55RB9ZhPjAE8dCkjHSOvRrXnC5xLveZxKd5RG7d/qQ==}
     engines: {node: '>=16'}
     dev: true
 
@@ -4359,12 +4359,6 @@ packages:
   /@types/node@18.15.13:
     resolution: {integrity: sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==}
 
-  /@types/node@20.11.27:
-    resolution: {integrity: sha512-qyUZfMnCg1KEz57r7pzFtSGt49f6RPkPBis3Vo4PbS7roQEDn22hiHzl/Lo1q4i4hDEgBJmBF/NTNg2XR0HbFg==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: false
-
   /@types/node@20.11.30:
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
     dependencies:
@@ -4629,7 +4623,7 @@ packages:
       '@transmute/credentials-context': 0.7.0-unstable.82
       '@transmute/ed25519-signature-2018': 0.7.0-unstable.82
       '@transmute/json-web-signature': 0.7.0-unstable.82
-      '@veramo-community/lds-ecdsa-secp256k1-recovery2020': git/github.com+uport-project/EcdsaSecp256k1RecoverySignature2020/ab0db52de6f4e6663ef271a48009ba26e688ef9b(expo@50.0.13)(react-native@0.73.6)
+      '@veramo-community/lds-ecdsa-secp256k1-recovery2020': git@github.com+uport-project/EcdsaSecp256k1RecoverySignature2020/ab0db52de6f4e6663ef271a48009ba26e688ef9b(expo@50.0.13)(react-native@0.73.6)
       '@veramo/core-types': 5.6.0
       '@veramo/utils': 5.6.0
       cross-fetch: 4.0.0
@@ -6056,7 +6050,7 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -6067,7 +6061,7 @@ packages:
   /chromium-edge-launcher@1.0.0:
     resolution: {integrity: sha512-pgtgjNKZ7i5U++1g1PWv75umkHvhVTDOQIZ+sjeUX9483S7Y6MUvO0lrd7ShGlQlFHMN4SwKTCq/X8hWrbv2KA==}
     dependencies:
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -9168,7 +9162,7 @@ packages:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       jest-mock: 29.7.0
       jest-util: 29.7.0
     dev: false
@@ -9198,7 +9192,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       jest-util: 29.7.0
     dev: false
 
@@ -9207,7 +9201,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -9230,7 +9224,7 @@ packages:
     resolution: {integrity: sha512-eIz2msL/EzL9UFTFFx7jBTkeZfku0yUAyZZZmJ93H2TYEiroIx2PQjEXcwYtYl8zXCxb+PAmA2hLIt/6ZEkPHw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@types/node': 20.11.27
+      '@types/node': 20.11.30
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -13873,7 +13867,7 @@ packages:
     optionalDependencies:
       commander: 10.0.1
 
-  git/github.com+uport-project/EcdsaSecp256k1RecoverySignature2020/ab0db52de6f4e6663ef271a48009ba26e688ef9b(expo@50.0.13)(react-native@0.73.6):
+  git@github.com+uport-project/EcdsaSecp256k1RecoverySignature2020/ab0db52de6f4e6663ef271a48009ba26e688ef9b(expo@50.0.13)(react-native@0.73.6):
     resolution: {commit: ab0db52de6f4e6663ef271a48009ba26e688ef9b, repo: git@github.com:uport-project/EcdsaSecp256k1RecoverySignature2020.git, type: git}
     id: git@github.com+uport-project/EcdsaSecp256k1RecoverySignature2020/ab0db52de6f4e6663ef271a48009ba26e688ef9b
     name: '@veramo-community/lds-ecdsa-secp256k1-recovery2020'
