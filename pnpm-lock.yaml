@@ -110,14 +110,14 @@ packages:
   /@babel/code-frame@7.10.4:
     resolution: {integrity: sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg==}
     dependencies:
-      '@babel/highlight': 7.23.4
+      '@babel/highlight': 7.24.5
     dev: false
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/highlight': 7.23.4
+      '@babel/highlight': 7.24.5
       chalk: 2.4.2
 
   /@babel/compat-data@7.23.5:
@@ -356,6 +356,10 @@ packages:
     resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
 
+  /@babel/helper-validator-identifier@7.24.5:
+    resolution: {integrity: sha512-3q93SSKX2TWCG30M2G2kwaKeTYgEUp5Snjuj8qm729SObL6nbtUldAi37qbxkD5gg3xnBio+f9nqpSepGZMvxA==}
+    engines: {node: '>=6.9.0'}
+
   /@babel/helper-validator-option@7.23.5:
     resolution: {integrity: sha512-85ttAOMLsr53VgXkTbkx8oA6YTfT4q7/HzXSLEYmjcSTJPMPQtvq1BD79Byep5xMUYbGRzEpDsjUf3dyp54IKw==}
     engines: {node: '>=6.9.0'}
@@ -381,13 +385,14 @@ packages:
       - supports-color
     dev: false
 
-  /@babel/highlight@7.23.4:
-    resolution: {integrity: sha512-acGdbYSfp2WheJoJm/EBBBLh/ID8KDc64ISZ9DYtBmC8/Q204PZJLHyzeB5qMzJ5trcOkybd78M4x2KWsUq++A==}
+  /@babel/highlight@7.24.5:
+    resolution: {integrity: sha512-8lLmua6AVh/8SLJRRVD6V8p73Hir9w5mJrhE+IPpILG31KKlI9iz5zmBYKcWPS59qSfgP9RaSBQSHHE81WKuEw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-validator-identifier': 7.22.20
+      '@babel/helper-validator-identifier': 7.24.5
       chalk: 2.4.2
       js-tokens: 4.0.0
+      picocolors: 1.0.0
 
   /@babel/parser@7.24.0:
     resolution: {integrity: sha512-QuP/FxEAzMSjXygs8v4N9dvdXzEHN4W1oF3PxuWAtPo08UdM17u89RDMgjLn/mlc56iM0HlLmVkO/wgR+rDgHg==}
@@ -1061,7 +1066,7 @@ packages:
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.24.0)
       '@babel/helper-plugin-utils': 7.24.0
-      '@babel/helper-validator-identifier': 7.22.20
+      '@babel/helper-validator-identifier': 7.24.5
     dev: false
 
   /@babel/plugin-transform-modules-umd@7.23.3(@babel/core@7.24.0):
