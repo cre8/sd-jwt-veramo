@@ -39,7 +39,7 @@ devDependencies:
     version: 8.0.1(release-it@17.1.1)
   '@sd-jwt/crypto-nodejs':
     specifier: next
-    version: 0.6.2-next.2
+    version: 0.7.2-next.0
   '@types/node':
     specifier: ^20.11.30
     version: 20.11.30
@@ -3673,9 +3673,9 @@ packages:
       '@sd-jwt/utils': 0.6.0
     dev: false
 
-  /@sd-jwt/crypto-nodejs@0.6.2-next.2:
-    resolution: {integrity: sha512-sMWV89HAeZ1c++g+H9uLTjFV73G5bQVKtPXWmZbJ/XybaJIINnuRybrQP/tivXcanbYCEtoDHifNTuKebeve4A==}
-    engines: {node: '>=16'}
+  /@sd-jwt/crypto-nodejs@0.7.2-next.0:
+    resolution: {integrity: sha512-XsQTxBMg6ya4lvWWb3p1HKJFJdxT9jCW7MzehDxNmIT2Mo/XD4ePt/IkyHQ6e6a72LnOrNeANPRBYNdrhfrTvA==}
+    engines: {node: '>=18'}
     dev: true
 
   /@sd-jwt/decode@0.4.0:
@@ -10838,6 +10838,7 @@ packages:
 
   /osenv@0.1.5:
     resolution: {integrity: sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==}
+    deprecated: This package is no longer supported.
     dependencies:
       os-homedir: 1.0.2
       os-tmpdir: 1.0.2
